@@ -1,0 +1,428 @@
+================================================================
+           PIX MULTI - MANUAL DE CONFIGURAÇÃO ANDROID
+                     Versão 1.0.0
+================================================================
+
+SUMÁRIO
+-------
+1. Introdução
+2. Requisitos do Sistema
+3. Download e Instalação
+4. Primeiro Acesso
+5. Configurações Básicas
+6. Gerar QR Code PIX
+7. Sistema Premium
+8. Temas Personalizados
+9. Logo no QR Code
+10. Multi-Contas
+11. Doações
+12. Solução de Problemas
+13. Contato e Suporte
+14. FAQ - Perguntas Frequentes
+
+================================================================
+1. INTRODUÇÃO
+================================================================
+
+PIX Multi é um aplicativo profissional para geração de QR Codes
+PIX válidos pelo Banco Central do Brasil.
+
+FUNCIONALIDADES PRINCIPAIS:
+- QR Code PIX 100% válido
+- Aceita CPF, CNPJ e todos os tipos de chave
+- Múltiplas contas salvas
+- Valor com vírgula automática
+- Countdown de 2 minutos
+- "Copiar e Cola" funcional
+- Temas personalizáveis (Premium)
+- Logo no QR Code (Premium)
+- Multi-contas (Premium)
+
+PÚBLICO-ALVO:
+- Pessoas Físicas (CPF)
+- MEI (Microempreendedor Individual)
+- Empresas (CNPJ)
+- Autônomos e Profissionais Liberais
+- Lojas e Comércios
+- Prestadores de Serviço
+
+================================================================
+2. REQUISITOS DO SISTEMA
+================================================================
+
+MÍNIMOS:
+- Sistema: Android 8.0 (Oreo) ou superior
+- RAM: 2 GB
+- Armazenamento: 100 MB livres
+- Conexão: Internet (apenas para ativação Premium)
+
+RECOMENDADOS:
+- Sistema: Android 10.0 ou superior
+- RAM: 4 GB
+- Armazenamento: 200 MB livres
+- Conexão: Wi-Fi ou 4G/5G
+
+================================================================
+3. DOWNLOAD E INSTALAÇÃO
+================================================================
+
+PASSO 1: BAIXAR O APK
+1. Acesse o link de download fornecido
+2. Toque em "pix_multi_final_v1.0.apk"
+3. Aguarde o download completar (~22 MB)
+
+PASSO 2: PERMITIR INSTALAÇÃO
+1. Abra o arquivo baixado
+2. Se aparecer "Fonte desconhecida":
+   - Toque em "Configurações"
+   - Ative "Permitir desta fonte"
+   - Volte com a seta
+3. Toque em "Instalar"
+
+PASSO 3: CONCLUIR INSTALAÇÃO
+1. Aguarde a barra de progresso
+2. Toque em "Abrir" ou "Concluir"
+3. O ícone aparecerá na tela inicial
+
+================================================================
+4. PRIMEIRO ACESSO
+================================================================
+
+TELA DE BOAS-VINDAS:
+1. O app abre com splash screen (2 segundos)
+2. Logo do PIX Multi aparece
+3. Aguarde carregar
+
+LOGIN SEMANAL (USUÁRIOS FREE):
+1. Digite seu nome completo
+2. Toque em "ENTRAR"
+3. Login realizado!
+4. Válido por 7 dias
+
+LOGIN AUTOMÁTICO (PREMIUM):
+- Usuários Premium não precisam login semanal
+- Acesso direto à Home Screen
+- Badge "PREMIUM" aparece no topo
+
+================================================================
+5. CONFIGURAÇÕES BÁSICAS
+================================================================
+
+CAMPOS OBRIGATÓRIOS:
+- Chave PIX: Sim (CPF, CNPJ, Email, Telefone, Aleatória)
+- Nome: Sim (João Silva ou Razão Social)
+- Cidade: Não (São Paulo)
+- Valor: Não (19,99)
+
+DICAS DE PREENCHIMENTO:
+
+CHAVE PIX (TODOS OS TIPOS ACEITOS):
+- CPF: 12345678900 (pessoa física)
+- CNPJ: 12345678000199 (pessoa jurídica/empresas)
+- Email: seu@email.com
+- Telefone: +5511987654321
+- Aleatória: (copie do app do banco)
+
+NOME:
+- Pessoa Física: Use seu nome completo
+- Pessoa Jurídica: Use a razão social ou nome fantasia
+- Máximo 50 caracteres
+
+CIDADE:
+- Cidade onde você está
+- Deixe em branco para "BRASIL"
+
+VALOR:
+- Digite apenas números
+- A vírgula aparece automaticamente
+- Exemplo: 1999 → R$ 19,99
+
+✅ ACEITO PARA:
+- Pessoas Físicas (CPF)
+- MEI (Microempreendedor Individual)
+- Empresas (CNPJ)
+- Autônomos e Profissionais Liberais
+- Lojas e Comércios
+- Prestadores de Serviço
+
+================================================================
+6. GERAR QR CODE PIX
+================================================================
+
+PASSO A PASSO:
+1. Preencha Chave PIX e Nome
+2. (Opcional) Preencha Cidade e Valor
+3. Toque em "GERAR QR CODE"
+4. QR Code aparece na tela
+5. Countdown inicia (2 minutos)
+6. Use o QR Code ou copie o "Copiar e Cola"
+
+COUNTDOWN DE EXPIRAÇÃO:
+- O QR Code expira em 2 minutos por segurança
+- Quando expirar, o QR Code some
+- O campo Valor é limpo automaticamente
+- Gere um novo QR Code para continuar
+
+COPIAR E COLA:
+1. Toque em "COPIAR 'COPIAR E COLA'"
+2. Mensagem: "Copiado!"
+3. Cole no app do banco ou WhatsApp
+4. O pagamento é processado normalmente
+
+================================================================
+7. SISTEMA PREMIUM
+================================================================
+
+PLANOS DISPONÍVEIS:
+- Semanal: 7 dias - R$ 1,99 - Código: ACT-W-XXX
+- Mensal: 30 dias - R$ 4,90 - Código: ACT-M-XXX
+- Anual: 365 dias - R$ 39,90 - Código: ACT-Y-XXX
+
+COMO COMPRAR:
+1. Escolha o plano desejado
+2. Envie para o suporte:
+   Email: adm.neyresolve@gmail.com
+   WhatsApp: +55 11 98617-4159
+3. Informe:
+   - Seu nome
+   - Plano desejado
+   - Comprovante de PIX
+4. Receba o código de ativação (até 24h)
+5. Ative no app
+
+COMO ATIVAR:
+1. Abra o app PIX Multi
+2. Toque em (Ativar Premium)
+3. Digite o código: ACT-W-ABC123
+4. Toque em "ATIVAR AGORA"
+5. Mensagem: "Semanal ativado! (7 dias)"
+6. Badge "PREMIUM" aparece no topo
+
+VANTAGENS PREMIUM:
+- Login semanal: Free=Sim, Premium=Não
+- Temas de cor: Free=1, Premium=6 cores
+- Logo no QR Code: Free=Não, Premium=4 opções
+- Multi-contas: Free=1, Premium=Ilimitadas
+- Timeout: Free=2min, Premium=1-10min
+- Suporte: Free=Padrão, Premium=Prioritário
+
+================================================================
+8. TEMAS PERSONALIZADOS (PREMIUM)
+================================================================
+
+COMO MUDAR O TEMA:
+1. Toque em (Configurações)
+2. Role até "Tema do App"
+3. Toque na cor desejada:
+   Verde PIX (padrão)
+   Azul
+   Roxo
+   Laranja
+   Vermelho
+   Escuro
+4. Tema aplicado!
+5. O app reinicia com a nova cor
+
+================================================================
+9. LOGO NO QR CODE (PREMIUM)
+================================================================
+
+OPÇÕES DISPONÍVEIS:
+- Sem logo: QR Code limpo
+- Logo padrão: "PIX" verde
+- Iniciais: Suas iniciais (ex: JS)
+- Upload: Sua logo personalizada
+
+COMO CONFIGURAR:
+1. Toque em (Configurações)
+2. Role até "Logo no QR Code"
+3. Selecione a opção desejada
+4. Para Upload:
+   - Toque em "Upload Personalizado"
+   - Escolha "Galeria" ou "Câmera"
+   - Selecione a imagem
+   - Logo salva!
+5. Volte para Home e gere QR Code
+6. Logo aparece no centro do QR Code
+
+REQUISITOS PARA UPLOAD:
+- Formato: PNG ou JPG
+- Tamanho: Até 400x400 pixels
+- Fundo: Transparente (PNG) recomendado
+
+================================================================
+10. MULTI-CONTAS (PREMIUM)
+================================================================
+
+COMO ADICIONAR CONTAS:
+1. Toque em (Menu)
+2. Selecione "Multi-Contas"
+3. Toque em "+" (Adicionar)
+4. Preencha:
+   - Nome da conta
+   - Chave PIX
+   - Nome completo
+   - Cidade
+5. Toque em "SALVAR"
+6. Conta adicionada!
+
+COMO ALTERNAR CONTAS:
+1. Toque em (Menu)
+2. Selecione "Multi-Contas"
+3. Toque na conta desejada
+4. Conta ativa!
+5. Os campos são preenchidos automaticamente
+
+================================================================
+11. DOAÇÕES
+================================================================
+
+COMO DOAR:
+1. Na Home Screen, role até o final
+2. Toque no card "Gostou? Doe via PIX"
+3. Toque em "DOAR"
+4. App do banco abre com a chave:
+   vendas.neyresolve@gmail.com
+5. Digite o valor e confirme
+6. Doação enviada! Obrigado!
+
+CHAVE PIX PARA DOAÇÕES:
+Email: vendas.neyresolve@gmail.com
+Qualquer valor é bem-vindo!
+
+================================================================
+12. SOLUÇÃO DE PROBLEMAS
+================================================================
+
+PROBLEMA: App não abre
+SOLUÇÃO:
+1. Reinicie o celular
+2. Verifique se há atualizações
+3. Desinstale e instale novamente
+4. Contate o suporte
+
+PROBLEMA: QR Code não é lido
+SOLUÇÃO:
+1. Aumente o brilho da tela
+2. Limpe a câmera do celular que vai ler
+3. Aproxime mais o QR Code
+4. Gere um novo QR Code
+
+PROBLEMA: Código Premium não ativa
+SOLUÇÃO:
+1. Verifique o formato: ACT-W-ABC123
+2. Use letras MAIÚSCULAS
+3. Verifique se não há espaços
+4. Contate o suporte
+
+PROBLEMA: Logo não aparece
+SOLUÇÃO:
+1. Verifique se é usuário Premium
+2. Use imagem PNG com fundo transparente
+3. Redimensione para 200x200 pixels
+
+================================================================
+13. CONTATO E SUPORTE
+================================================================
+
+CANAIS DE ATENDIMENTO:
+- Email: adm.neyresolve@gmail.com (24h)
+- WhatsApp: +55 11 98617-4159 (Seg-Sex 9h-18h)
+
+TEMPO DE RESPOSTA:
+- Email: Até 24h úteis
+- WhatsApp: Até 2h úteis
+
+O QUE INFORMAR NO CONTATO:
+- Seu nome completo
+- Versão do app (em Configurações)
+- Modelo do celular
+- Versão do Android
+- Descrição do problema
+- Screenshot (se possível)
+
+================================================================
+14. FAQ - PERGUNTAS FREQUENTES
+================================================================
+
+Aceita chave PIX CNPJ?
+Sim! O app aceita todos os tipos de chave PIX:
+- CPF (pessoa física)
+- CNPJ (pessoa jurídica/empresas)
+- Email
+- Telefone
+- Chave Aleatória
+
+Ideal para empresas, MEI, autônomos e profissionais liberais!
+
+O app é grátis?
+Sim! A versão Free é completamente funcional.
+O Premium é opcional e desbloqueia recursos extras.
+
+Preciso de internet para usar?
+Não! O app funciona offline.
+Internet é necessária apenas para:
+- Ativação Premium
+- Doações via PIX
+
+O QR Code é válido em todos os bancos?
+Sim! O QR Code segue o padrão do Banco Central
+e funciona em todos os bancos brasileiros.
+
+Posso usar em mais de um celular?
+Sim! Cada celular precisa de:
+- Instalação própria do app
+- Login próprio (Free)
+- Ou Premium próprio (ou compartilhado)
+
+Como recebo atualizações?
+- Baixe a nova versão do mesmo local
+- Instale por cima da versão antiga
+- Suas configurações são mantidas
+
+Meus dados estão seguros?
+Sim! O app:
+- Não coleta dados pessoais
+- Não usa internet para gerar QR Code
+- Salva configurações apenas no seu celular
+
+================================================================
+TERMOS DE USO
+================================================================
+
+LICENÇA DE USO:
+- Uso pessoal e comercial permitido
+- Proibida redistribuição modificada
+- Proibida engenharia reversa
+- Copyright 2024 - Todos os direitos reservados
+
+RESPONSABILIDADE:
+- O app gera QR Codes válidos
+- O usuário é responsável pelas transações
+- Desenvolvedor não se responsabiliza por erros de digitação
+- Sempre confira os dados antes de gerar o QR Code
+
+================================================================
+INFORMAÇÕES TÉCNICAS
+================================================================
+
+- Versão: 1.0.0
+- Framework: Flutter 3.24.0
+- Mínimo Android: 8.0 (API 26)
+- Tamanho APK: ~22 MB
+- Arquitetura: ARM64, ARMv7, x86_64
+
+================================================================
+AGRADECIMENTOS
+================================================================
+
+Obrigado por usar PIX Multi!
+
+Desenvolvido com carinho no Brasil
+Para brasileiros e empresas brasileiras
+
+Juntos facilitando pagamentos via PIX!
+
+================================================================
+           FIM DO MANUAL - PIX MULTI ANDROID
+================================================================
