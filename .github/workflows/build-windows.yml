@@ -30,11 +30,27 @@ jobs:
       - name: Build Windows executable
         run: flutter build windows --release
 
-      - name: Create ZIP with executable
+      - name: Create ZIP package
         run: |
-          cd build/windows/runner/Release
-          Compress-Archive -Path * -DestinationPath ../../../../../pix_multi_final_windows.zip
-          cd ../../../../../
+          # Listar conteúdo para debug
+          Write-Host "=== Build directory contents ==="
+          Get-ChildItem -Recurse build/windows/ | Select-Object FullName
+    
+          # Caminho correto para Flutter 3.27+
+          $releasePath = "build/windows/x64/runner/Release"
+    
+          if (Test-Path $releasePath) {
+            Write-Host "✅ Found release at: $releasePath"
+            cd $releasePath
+            Compress-Archive -Path * -DestinationPath ../../../../../pix_multi_final_windows.zip -Force
+            cd ../../../../../
+            Write-Host "✅ ZIP created: pix_multi_final_windows.zip"
+          } else {
+            Write-Host "❌ Release path not found: $releasePath"
+            Write-Host "🔍 Searching for .exe file..."
+            Get-ChildItem -Recurse build/ -Filter "*.exe" | Select-Object FullName
+            exit 1
+          }
 
       - name: Upload to Release
         uses: svenstaro/upload-release-action@v2
