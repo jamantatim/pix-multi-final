@@ -1,0 +1,45 @@
+name: Build Windows Executable
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Enable Windows desktop
+        run: flutter config --enable-windows-desktop
+
+      - name: Build Windows executable
+        run: flutter build windows --release
+
+      - name: Create ZIP with executable
+        run: |
+          cd build/windows/runner/Release
+          Compress-Archive -Path * -DestinationPath ../../../../../pix_multi_final_windows.zip
+          cd ../../../../../
+
+      - name: Upload to Release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: pix_multi_final_windows.zip
+          asset_name: pix_multi_final_windows.zip
+          tag: ${{ github.ref }}
+          overwrite: true
