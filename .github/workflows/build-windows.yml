@@ -21,45 +21,82 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Install dependencies
-        run: flutter pub get
-
       - name: Enable Windows desktop
         run: flutter config --enable-windows-desktop
+
+      - name: Install dependencies
+        run: flutter pub get
 
       - name: Build Windows executable
         run: flutter build windows --release
 
+      - name: Verify build output
+        run: |
+          Write-Host "📁 Checking build artifacts..."
+          Get-ChildItem -Recurse build/windows/ -Filter "*.exe"
+          
+          # More specific path check
+          if (Test-Path "build/windows/x64/runner/Release/pix_multi_final.exe") {
+            Write-Host "✅ Main executable found"
+          } elseif (Test-Path "build/windows/runner/Release/pix_multi_final.exe") {
+            Write-Host "✅ Alternative path found"
+          } else {
+            Write-Host "⚠️ Looking for any .exe file..."
+            Get-ChildItem -Recurse build/windows/ -Filter "*.exe"
+          }
+
       - name: Create ZIP package
         run: |
-          # Listar conteúdo para debug
-          Write-Host "=== Build directory contents ==="
-          Get-ChildItem -Recurse build/windows/ | Select-Object FullName
-    
-          # Caminho correto para Flutter 3.27+
-          $releasePath = "build/windows/x64/runner/Release"
-    
-          if (Test-Path $releasePath) {
-            Write-Host "✅ Found release at: $releasePath"
-            cd $releasePath
-            Compress-Archive -Path * -DestinationPath ../../../../../pix_multi_final_windows.zip -Force
-            cd ../../../../../
-            Write-Host "✅ ZIP created: pix_multi_final_windows.zip"
-          } else {
-            Write-Host "❌ Release path not found: $releasePath"
-            Write-Host "🔍 Searching for .exe file..."
-            Get-ChildItem -Recurse build/ -Filter "*.exe" | Select-Object FullName
-            exit 1
+          # Try standard Flutter path first
+          $standardPaths = @(
+            "build/windows/x64/runner/Release",
+            "build/windows/runner/Release"
+          )
+          
+          $releasePath = $null
+          foreach ($path in $standardPaths) {
+            if (Test-Path $path) {
+              $releasePath = $path
+              Write-Host "✅ Found build at: $releasePath"
+              break
+            }
           }
+          
+          # If not found, search recursively
+          if (-not $releasePath) {
+            Write-Host "🔍 Searching for .exe recursively..."
+            $exeFile = Get-ChildItem -Recurse build/windows/ -Filter "*.exe" | Select-Object -First 1
+            if ($exeFile) {
+              $releasePath = $exeFile.DirectoryName
+              Write-Host "✅ Found .exe at: $releasePath"
+            } else {
+              Write-Host "❌ No executable found in build/windows/"
+              exit 1
+            }
+          }
+          
+          # Create ZIP from the release directory
+          $zipName = "pix_multi_windows_${{ github.ref_name }}.zip"
+          cd $releasePath
+          Compress-Archive -Path * -DestinationPath "${{ github.workspace }}/$zipName" -Force
+          cd ${{ github.workspace }}
+          
+          Write-Host "✅ ZIP created: $zipName"
+          Write-Host "Size: $([math]::Round((Get-Item $zipName).Length / 1MB, 2)) MB"
+          
+          # Set output for next step
+          echo "ZIP_FILE=$zipName" >> $env:GITHUB_ENV
+
+      - name: List workspace contents (debug)
+        run: |
+          Write-Host "📁 Workspace contents:"
+          Get-ChildItem ${{ github.workspace }} -Filter "*.zip"
 
       - name: Upload to Release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: pix_multi_final_windows.zip
-          asset_name: pix_multi_final_windows.zip
+          file: ${{ env.ZIP_FILE }}
+          asset_name: pix_multi_windows_${{ github.ref_name }}.zip
           tag: ${{ github.ref_name }}
           overwrite: true
-          release_name: "PIX Multi ${{ github.ref_name }}"
-          body: "Build automático do Windows executable"
-        if: startsWith(github.ref, 'refs/tags/')  ← ✅ Só roda se for TAG!
