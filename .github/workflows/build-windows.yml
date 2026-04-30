@@ -58,5 +58,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: pix_multi_final_windows.zip
           asset_name: pix_multi_final_windows.zip
-          tag: ${{ github.ref }}
+          tag: ${{ github.ref_name }}
           overwrite: true
+          release_name: "PIX Multi ${{ github.ref_name }}"
+          body: "Build automático do Windows executable"
+        if: startsWith(github.ref, 'refs/tags/')  ← ✅ Só roda se for TAG!
