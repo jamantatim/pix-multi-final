@@ -9,8 +9,9 @@ on:
 jobs:
   build-windows:
     runs-on: windows-latest
+    
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Flutter
@@ -27,41 +28,40 @@ jobs:
         run: flutter pub get
 
       - name: Build Windows executable
-        run: flutter build windows --release --verbose
+        run: flutter build windows --release
 
-      - name: Create ZIP package
+      - name: Find and ZIP executable
         run: |
-          $releasePath = "build/windows/x64/runner/Release"
-          if (Test-Path $releasePath) {
-            Write-Host "✅ Found: $releasePath"
-            cd $releasePath
+          Write-Host "=== Searching for .exe ==="
+          $exe = Get-ChildItem -Recurse build/ -Filter "*.exe" | Select-Object -First 1
+          if ($exe) {
+            Write-Host "✅ Found: $($exe.FullName)"
+            $dir = Split-Path $exe.FullName
+            Write-Host "📁 Directory: $dir"
+            
+            # Create ZIP in root
+            cd $dir
             Compress-Archive -Path * -DestinationPath ../../../../../pix_multi_final_windows.zip -Force
             cd ../../../../../
-            Write-Host "✅ ZIP created"
-          } else {
-            Write-Host "❌ Path not found, searching..."
-            $exe = Get-ChildItem -Recurse build/ -Filter "*.exe" | Select-Object -First 1
-            if ($exe) {
-              Write-Host "✅ Found exe at: $($exe.FullName)"
-              $dir = Split-Path $exe.FullName
-              cd $dir
-              Compress-Archive -Path * -DestinationPath ../../../../../pix_multi_final_windows.zip -Force
+            
+            # Verify ZIP exists
+            if (Test-Path "pix_multi_final_windows.zip") {
+              Write-Host "✅ ZIP created successfully!"
+              Get-Item "pix_multi_final_windows.zip" | Select-Object Name, Length
             } else {
-              Write-Host "❌ No .exe found!"
+              Write-Host "❌ ZIP not found!"
               exit 1
             }
+          } else {
+            Write-Host "❌ No .exe found in build directory!"
+            Get-ChildItem -Recurse build/ | Select-Object FullName
+            exit 1
           }
 
-      - name: Upload to Release
-        uses: softprops/action-gh-release@v2
+      - name: Upload Windows ZIP as Artifact
+        uses: actions/upload-artifact@v4
         with:
-          files: pix_multi_final_windows.zip
-          tag_name: ${{ github.ref_name }}
-          name: "PIX Multi ${{ github.ref_name }}"
-          body: "Build automático do Windows executable"
-          draft: false
-          prerelease: false
-          fail_on_unmatched_files: true
-        if: startsWith(github.ref, 'refs/tags/')
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: pix_multi_final_windows
+          path: pix_multi_final_windows.zip
+          retention-days: 30
+          if-no-files-found: error
